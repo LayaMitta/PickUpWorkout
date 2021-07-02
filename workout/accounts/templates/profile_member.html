@@ -1,0 +1,6 @@
+{% extends 'base_member.html' %}
+{% block title%}{{ user.username}}'s Profile{% endblock %}
+{% block content %}
+<h2>Hello,{{ user.username }}</h2>
+{{ msg }}
+{% endblock %}

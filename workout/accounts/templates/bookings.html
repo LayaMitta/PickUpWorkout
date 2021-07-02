@@ -1,0 +1,35 @@
+{% extends 'base_trainer.html '%}
+{% block content %}
+<script type='text/javascript'>
+  $(document).ready(function(){
+     //Iterate through each of the rows
+      $('tr').each(function(){
+        //Check the value of the last <td> element in the row (trimmed to ignore white-space)
+        if($(this).find('td:last').text().trim() === "Booked"){
+            //Set the row to green
+            $(this).css('background','#ff9999');
+        }
+        else if($(this).find('td:last').text().trim() === "Available"){
+            $(this).css('background','#b3e6b3');
+
+        }
+      });
+  });
+</script>
+
+<table class=" table table-sm table-hover w-40 text-center">
+    <thead>
+    <tr> 
+    <td><b>TIMINGS</b></td>
+    <td><b>BOOKINGS</b></td>
+    </tr >
+    </thead>
+    {% for x,y in slot %}
+    <tr>
+        <td>{{ x }}</td>
+        <td>{{ y }}</td>
+    </tr>
+    
+   {% endfor %} 
+  </table>
+{% endblock %}

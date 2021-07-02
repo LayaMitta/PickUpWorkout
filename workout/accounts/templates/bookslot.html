@@ -1,0 +1,105 @@
+{% extends 'base_member.html' %}
+{% block title%}Book Slot{% endblock %}
+{% block content %}
+<br>
+<br>
+<style>
+    .button{
+        background-color: green;
+    }
+    </style>
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <label for="name"><strong>Your Name :</strong></label>&ensp;
+        <input type="text" name="name" id="box" value="{{ user.username }}" readonly required>&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="email"><strong>Your Email :</strong></label>&ensp;
+        <input type="text" name="email" id="box" pattern="^[a-z0-9A-Z.!#$%&'*+/=_{|}~-]+@gmail.com$" oninvalid="setCustomValidity('Format required : abc@gmail.com')" oninput="setCustomValidity('')" value="{{user.email}}" readonly required>
+    </div>
+    <div class="input-group mb-3">
+        <label for="tname"><strong>Trainer Name :</strong></label>&ensp;
+        <input type="text" name="tname" id="box" value="{{ name1 }}" readonly required>&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="temail"><strong>Trainer Email :</strong></label>&ensp;
+        <input type="text" name="temail" id="box" pattern="^[a-z0-9A-Z.!#$%&'*+/=_{|}~-]+@gmail.com$" oninvalid="setCustomValidity('Format required : abc@gmail.com')" oninput="setCustomValidity('')" value="{{email1}}"  readonly required>
+    </div>
+    <br>
+    <br>
+    <div class="input-group mb-3">
+        <label for="available"><strong>Available Slots :</strong></label>&ensp;
+        <select class="selectpicker" name="availables" multiple data-live-search="true" data-live-search-placeholder="Timings" required>
+            <option disabled="true"></option>
+        {% ifequal slot.t5 '5am-6am'  %}
+            <option>5am-6am</option>
+        {% endifequal %}
+        {% ifequal slot.t6 '6am-7am'  %}
+            <option>6am-7am</option>
+        {% endifequal %}
+        {% ifequal slot.t7 '7am-8am'  %}
+            <option>7am-8am</option>
+        {% endifequal %}
+        {% ifequal slot.t8 '8am-9am'  %}
+            <option>8am-9am</option>
+        {% endifequal %}
+        {% ifequal slot.t9 '9am-10am'  %}
+            <option>9am-10am</option>
+        {% endifequal %}
+        {% ifequal slot.t10 '10am-11am'  %}
+            <option>10am-11am</option>
+        {% endifequal %}
+        {% ifequal slot.t11 '1am-12noon'  %}
+            <option>11am-12noon</option>
+        {% endifequal %}
+        {% ifequal slot.t12 '12noon-1pm'  %}
+            <option>12noon-1pm</option>
+        {% endifequal %}
+        {% ifequal slot.t13 '1pm-2pm'  %}
+            <option>1pm-2pm</option>
+        {% endifequal %}
+        {% ifequal slot.t14 '2pm-3pm'  %}
+            <option>2pm-3pm</option>
+        {% endifequal %}
+        {% ifequal slot.t15 '3pm-4pm'  %}
+            <option>3pm-4pm</option>
+        {% endifequal %}
+        {% ifequal slot.t16 '4pm-5pm'  %}
+            <option>4pm-5pm</option>
+        {% endifequal %}
+        {% ifequal slot.t17 '5pm-6pm'  %}
+            <option>5pm-6pm</option>
+        {% endifequal %}
+        {% ifequal slot.t18 '6pm-7pm'  %}
+            <option>6pm-7pm</option>
+        {% endifequal %}
+        {% ifequal slot.t19 '7pm-8pm'  %}
+            <option>7pm-8pm</option>
+        {% endifequal %}
+        {% ifequal slot.t20 '8pm-9pm'  %}
+            <option>8pm-9pm</option>
+        {% endifequal %}
+        {% ifequal slot.t21 '9pm-10pm'  %}
+            <option>9pm-10pm</option>
+        {% endifequal %}
+    </select>
+    </div>
+    <div class="input-group mb-3">
+        <label for="meetinglink"><strong>Meeting Link :</strong></label>&ensp;
+        <input type="text" name="meetinglink" id="meetinglink" oninvalid="setCustomValidity('Please enter the meeting link')" oninput="setCustomValidity('')" required>
+    </div>
+    <div class="form-group">
+        <a href="{% url  'payment'  %}">Payment</a>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Book Session" class="btn btn-info float-right">
+    </div>
+</form>
+
+{% endblock %}
+  
+  
+    
+        

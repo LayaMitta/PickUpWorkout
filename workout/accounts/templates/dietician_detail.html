@@ -1,0 +1,51 @@
+{% extends 'base_dietician.html' %}
+{% block content %}
+<br>
+<h3>User Information</h3>
+<br>
+<br>
+{% if user is not None %}
+<table class="table">
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>{{ user.username }}</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>{{ user.age }}</td>
+		</tr>
+		<tr>
+			<td>Experience</td>
+			<td>{{ object.experience }}</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>{{ user.email }}</td>
+		</tr>
+        <tr>
+			<td>Phone Number</td>
+			<td>{{ user.phone }}</td>
+		</tr>
+		<tr>
+			<td>Available Timings</td>
+			<td>{{ object.available }}</td>
+		</tr>
+		<tr>
+			<td>Rating</td>
+			<td>{{ object.rating }}</td>
+		</tr>
+		<tr>
+			<td>Fees</td>
+			<td>{{ object.fees }}</td>
+		</tr>
+
+	</tbody>
+</table>
+{% else %}
+	<h3>Dietician doesnot exist</h3>
+{% endif %}
+
+
+
+{% endblock %}

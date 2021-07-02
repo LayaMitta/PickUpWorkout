@@ -1,0 +1,48 @@
+{% extends 'base_member.html' %}
+{% block content %}
+<table class="table table-striped">
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>{{ object.username }}</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>{{ object.age }}</td>
+		</tr>
+		<tr>
+			<td>Available Timings</td>
+			<td>{{ available }}</td>
+		</tr>
+		<tr>
+			<td>Experience</td>
+			<td>{{ experience }}</td>
+		</tr>
+        <tr>
+			<td>Workout</td>
+			<td>{{ object.workout }}</td>
+		</tr>
+		<tr>
+			<td>Rating</td>
+			<td>{{ rating }}</td>
+		</tr>
+        <tr>
+			<td>Per Session Fee</td>
+			<td>{{ fees }}</td>
+		</tr>
+        <tr>
+			<td>Email</td>
+			<td>{{ object.email }}</td>
+		</tr>
+		<tr>
+			<td>Phone No</td>
+			<td>{{ object.phone }}</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<a href="{%url 'bookslot' object.username %}">Join LiveDemo Session</a>
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pickup Workout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+    body {
+      background-image: url('https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: #FFFFFF;
+  }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+      div {
+        background-image: url('img_girl.jpg');
+      }
+    .btn
+    {
+      background-color:orange;
+      width:200px;
+      height:100px;
+      border: 2px solid black;
+    }
+    
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: px;
+      height: 100%;
+      width:200px;
+    }
+    .form-group
+    {
+      width: auto;
+      height: auto;
+
+    }
+    
+   
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: 100%;
+        padding: 0px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    <label for=""></label>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'registerNew' %}">Home</a></li>
+        <li><a href="{% url  'about'  %}">About</a></li>
+        <li><a href="{% url  'contact'  %}">Contact</a></li>
+
+      </ul>
+      
+        <ul class="nav navbar-nav navbar-middle">
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <h2>Pickup Workout</h2>
+        </li>
+       
+      </ul>
+      </form>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid ">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <div class="one">
+      <a class="btn btn-info" href="{%url 'dietician_register' %}" role="button">Dietician</a>
+      </div>
+      <div class="two">
+      <a class="btn btn-info" href="{%url 'trainer_register' %}" role="button">Trainer</a>
+      </div>
+      <div class="three">
+      <a class="btn btn-info" href="{%url 'member_register' %}" role="button">Member</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

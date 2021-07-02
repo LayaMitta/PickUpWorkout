@@ -1,0 +1,24 @@
+{% extends 'base_member.html' %}
+{% block content %}
+
+
+<div class='container'>
+	<div class='row'>
+	{% for i in obj_list %}
+	<div class="card" style="width:200px">
+	<img class="card-img-top" src="https://th.bing.com/th/id/OIP.M7JaF7SPhFcugd0-j55i7AHaHF?pid=ImgDet&rs=1">
+			<div class="card-body">
+			<h4 class="card-title">{{ i.username }}</h4>
+			<p class="card-text">
+				<p>Age: {{i.age}}</p>
+				<br>
+				<a href="{% url 'dynamic_lookup_dietician' i.username %}" class="btn btn-primary success">See Profile</a>
+			</p>
+			</div>
+		</div>
+		
+		{% endfor %}
+	</div>
+	</div>
+
+{% endblock %}

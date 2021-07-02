@@ -1,0 +1,40 @@
+{% extends 'base_member.html' %}
+{% block content %}
+<br>
+<h3>User Information</h3>
+<br>
+<br>
+{% if user is not None %}
+<table class="table">
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>{{ user.username }}</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>{{ user.age }}</td>
+		</tr>
+		<tr>
+			<td>Health Issues</td>
+			<td>{{ object.health_issues }}</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>{{ user.email }}</td>
+		</tr>
+        <tr>
+			<td>Phone Number</td>
+			<td>{{ user.phone }}</td>
+		</tr>
+
+	</tbody>
+</table>
+{% else %}
+	<h3>Member doesnot exist</h3>
+{% endif %}
+
+
+
+
+{% endblock %}

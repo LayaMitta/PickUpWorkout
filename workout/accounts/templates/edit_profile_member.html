@@ -1,0 +1,37 @@
+{% extends 'base_member.html' %}
+{% block content %}
+<br>
+<h3>Edit Details</h3>
+<br>
+<form method="POST" action="">
+    {% csrf_token %} 
+    <div class="input-group mb-3">
+        <label for="name">User Name :</label>&ensp;
+        <input type="text"  name="name" id="box" value="{{ user.username }}" readonly required>&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="age">Age :</label>&ensp;
+        <input type="text" name="age" id="box" pattern="[0-9]{.2}" value="{{ user.age }}" readonly required>&ensp;
+    </div>
+        <div class="input-group mb-3">
+        <label for="email">Email :</label>&ensp;
+        <input type="text" name="email" id="box" pattern="^[a-z0-9A-Z.!#$%&'*+/=_{|}~-]+@gmail.com$" oninvalid="setCustomValidity('Format required : abc@gmail.com')" oninput="setCustomValidity('')" value="{{user.email}}" required>
+    </div>
+
+   <div class="input-group mb-3">
+        <label for="phone">Phone No :</label>&ensp;
+        <input type="tel" name="phone" id="box" pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter the correct format')" oninput="setCustomValidity('')" value="{{user.phone}}" required>&ensp; 
+    </div>
+<div class="input-group mb-3">
+<label for="health">Health Issues :</label>&ensp;
+<input type="text" name="health" id="box"  value="{{health}}"  required>
+</div>
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-info float-right ">
+    </div>
+</form>
+<div>
+    <p><strong>{{ msg }}</strong>
+    </div>
+
+{% endblock %}

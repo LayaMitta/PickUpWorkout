@@ -1,0 +1,63 @@
+{% extends 'base_dietician.html' %}
+{% block content %}
+<br>
+<h3>Edit Details</h3>
+<br>
+<form method="POST" action="">
+    {% csrf_token %} 
+    <div class="input-group mb-3">
+        <label for="name">User Name :</label>&ensp;
+        <input type="text"  name="name" id="box" value="{{ user.username }}" readonly required>&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="age">Age :</label>&ensp;
+        <input type="text" name="age" id="box" pattern="[0-9]{.2}" value="{{ user.age }}" readonly required>&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="exp">Experience :</label>&ensp;
+        <input type="text"  name="exp" id="box" value="{{ object.experience }}">&ensp;
+    </div>
+        <div class="input-group mb-3">
+        <label for="email">Email :</label>&ensp;
+        <input type="text" name="email" id="box" pattern="^[a-z0-9A-Z.!#$%&'*+/=_{|}~-]+@gmail.com$" oninvalid="setCustomValidity('Format required : abc@gmail.com')" oninput="setCustomValidity('')" value="{{user.email}}" required>
+    </div>
+
+   <div class="input-group mb-3">
+        <label for="phone">Phone No :</label>&ensp;
+        <input type="tel" name="phone" id="box" pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter the correct format')" oninput="setCustomValidity('')" value="{{user.phone}}" required>&ensp; 
+    </div>
+    <div class="input-group mb-3">
+        <label for="fees">Fees:</label>&ensp;
+        <input type="text" name="fees" id="box" value="{{object.fees}}">&ensp;
+    </div>
+    <div class="input-group mb-3">
+        <label for="available">Available Timings:</label>&ensp;
+        <select class="selectpicker" name="available" multiple data-live-search="true" data-live-search-placeholder="Timings" required>
+            <option disabled="true"></option>
+            <option>5am-6am</option>
+            <option>6am-7am</option>
+            <option>7am-8am</option>
+            <option>8am-9am</option>
+            <option>9am-10am</option>
+            <option>11am-12noon</option>
+            <option>12noon-1pm</option>
+            <option>1pm-2pm</option>
+            <option>2pm-3pm</option>
+            <option>3pm-4pm</option>
+            <option>4pm-5pm</option>
+            <option>5pm-6pm</option>
+            <option>6pm-7pm</option>
+            <option>7pm-8pm</option>
+            <option>8pm-9pm</option>
+            <option>9pm-10pm</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-info float-right ">
+    </div>
+</form>
+<div>
+    <p><strong>{{ msg }}</strong>
+    </div>
+
+{% endblock %}
